@@ -1,4 +1,5 @@
 #https://practice.geeksforgeeks.org/problems/peak-element/
+#obsidian://open?vault=HolyCow&file=Placement%2FArray%2F01%20Peak%20Element
 
 #O(N)
 def peakElement(self,arr, n):
