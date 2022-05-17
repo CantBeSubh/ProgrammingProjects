@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    border-spacing: 0px;
+}
+#puzzle{
+    width: 45vw;
+    height:45vw;
+}
+
+#puzzle input {
+    width:5vw;
+    height:5vw;
+    border:1px solid rgba(0,0,0,0.5);
+    text-align:center;
+    font-size: 2em;
+}
+
+.grey{
+    background-color:lightgrey;
+}
+
+body{
+    background-color:#001eb3;
+    color:#ffd700;
+}
+
+#container{
+    margin: 0 25vw 0 25vw;
+    /* border:1px red solid; */
+    text-align:center;
+}
+
+#solve-btn{
+    margin : 10px;
+    font-size: 50px;
+    color:blue;
+    background-color:gold;
+}
