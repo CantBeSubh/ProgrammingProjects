@@ -60,7 +60,7 @@ export default function Home() {
           >
             <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
             <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              Instantly deploy your Next.js site to a public URL wifsfsdsfsth Vercel.
             </p>
           </a>
         </div>
