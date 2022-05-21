@@ -1,10 +1,10 @@
 .single {
     padding: 2px 16px;
-    background: #fff;
+    background: #444;
     display: block;
     margin: 20px 10px;
-    border-left: 8px solid #fff;
-    transition: all .3s;
+    border-left: 8px solid #444;
+    transition: all .4s;
   }
 .single:hover {
     border-left: 8px solid #4979ff;

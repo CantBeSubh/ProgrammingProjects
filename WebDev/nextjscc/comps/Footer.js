@@ -1,7 +1,7 @@
 const Footer = () => {
     return ( 
         <footer>
-            Copyright HolyCow 2022
+            &copy; HolyCow 2022
         </footer>
      );
 }

@@ -27,7 +27,7 @@ export const getStaticPaths = async () => {
   
   const Details = ({ ninja }) => {
     return (
-      <div>
+      <div className="details">
         <h1>{ ninja.name }</h1>
         <p>{ ninja.email }</p>
         <p>{ ninja.website }</p>
