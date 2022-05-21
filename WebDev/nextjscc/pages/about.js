@@ -4,7 +4,7 @@ const about = () => {
     return (
     <>
         <Head>
-            <title>Ninja List | About</title>
+            <title>User List | About</title>
         </Head>
         <div>
             <h1 className={styles.title}>About!</h1>

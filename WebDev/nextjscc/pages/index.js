@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Ninja List | Home</title>
+        <title>User List | Home</title>
       </Head>
       <div >
         <h1 className={styles.title}>Homepage</h1>
