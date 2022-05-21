@@ -1,12 +1,26 @@
-const Ninjas = () => {
+import ninja from '../../styles/Ninjas.module.css'
+export const getStaticProps=async ()=>{
+    const res=await fetch('https://jsonplaceholder.typicode.com/users')
+    const data=await res.json()
+
+    return {
+        props:{ninjas:data}
+    }
+}
+
+
+const Ninjas = (props) => {
+    const {ninjas}=props
     return ( 
         <>
             <h1>Ninja Listing</h1>
-            <ul>
-                <li>hello</li>
-                <li>fdsf</li>
-                <li>sdfsdf</li>
-            </ul>
+            {ninjas.map(({name,id})=>(
+                <div key={id}>
+                    <a className={ninja.single}>
+                        <h3>{name}</h3>
+                    </a>
+                </div>
+            ))}
         </>
      );
 }
