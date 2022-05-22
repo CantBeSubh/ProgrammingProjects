@@ -1,10 +1,11 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
+import Powerstat from './comps/Powerstat'
 
 function Hero() {
     let [data,setData]=useState([])
     const rand=()=>Math.floor(Math.random()*730)+1
-    
+
     const fetchData=async ()=>{
         const id =rand()
         const res=await fetch(
@@ -20,7 +21,10 @@ function Hero() {
     <div>
         <div className="name">Hello {name}!</div>
         <img src={images && images.sm} className='image'/>
-        <div onClick={fetchData}>Click ME</div>
+
+        <div>Details</div>
+        <Powerstat/>
+        <div onClick={fetchData} id='btn'>Click ME</div>
     </div>
 
   )
