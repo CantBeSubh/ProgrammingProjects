@@ -1,6 +1,10 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
 import Powerstat from './comps/Powerstat'
+import Appearance from './comps/Appearance'
+import Biography from './comps/Biography'
+import Connections from './comps/Connections'
+import Work from './comps/Work'
 
 function Hero() {
     let [data,setData]=useState([])
@@ -15,7 +19,7 @@ function Hero() {
         setData(data)
     }
 
-    let {name,images,powerstats} = data
+    let {name,powerstats,appearance,biography,work,connections,images} = data
     
     return (
     <div>
@@ -24,6 +28,10 @@ function Hero() {
 
         <div>Details</div>
         <Powerstat powerstats={powerstats}/>
+        <Appearance appearance={appearance}/>
+        <Biography biography={biography}/>
+        <Work work={work}/>
+        <Connections connections={connections}/>
         <div onClick={fetchData} id='btn'>Click ME</div>
     </div>
 
