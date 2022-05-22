@@ -63,7 +63,6 @@ function Powerstat(props) {
             options={options}
             />
         }
-
     </div>
 
   )
