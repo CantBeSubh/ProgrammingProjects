@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Powerstat() {
+function Powerstat(props) {
+    console.log(props)
   return (
     <div>Powerstat</div>
+
   )
 }
 

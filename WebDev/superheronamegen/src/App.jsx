@@ -5,7 +5,7 @@ import './App.css'
 function App() {
   return (
     <div className="App">
-      <h1>Super Hero Name Genrator</h1>
+      <h1>Super Hero Genrator</h1>
       <Hero/>
     </div>
   )

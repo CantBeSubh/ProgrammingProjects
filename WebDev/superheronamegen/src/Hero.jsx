@@ -15,7 +15,7 @@ function Hero() {
         setData(data)
     }
 
-    let {name,images} = data
+    let {name,images,powerstats} = data
     
     return (
     <div>
@@ -23,7 +23,7 @@ function Hero() {
         <img src={images && images.sm} className='image'/>
 
         <div>Details</div>
-        <Powerstat/>
+        <Powerstat powerstats={powerstats}/>
         <div onClick={fetchData} id='btn'>Click ME</div>
     </div>
 
