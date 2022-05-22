@@ -17,8 +17,8 @@ function Name() {
     return (
     <div>
         <div className="name">Hello {name}!</div>
+        <img src={images.sm} className='image'/>
         <div onClick={fetchData}>Click ME</div>
-        <img src={images.sm}/>
     </div>
 
   )
