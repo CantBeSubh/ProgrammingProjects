@@ -1,13 +1,7 @@
-var hash = CryptoJS.MD5("Message");
-// alert(hash);
-
 function myFunction() {
-  let x = document.getElementById("numb").value;
-  let text;
-  if (isNaN(x) || x < 1 || x > 10) {
-    text = "Input not valid";
-  } else {
-    text = `Input OK | ${CryptoJS.MD5(x)}`;
-  }
-  document.getElementById("demo").innerHTML = text;
+  let name = document.getElementById("name").value;
+  let number = document.getElementById("numb").value;
+  let dob = document.getElementById("dob").value;
+  let text=CryptoJS.MD5(name+dob+number);
+  document.getElementById("demo").innerHTML = `YOUR PWD IS ${text}`;
 }
