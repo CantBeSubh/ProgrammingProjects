@@ -1,8 +1,14 @@
 import React from 'react'
 
-function Work() {
+function Work(props) {
+  let work=props.work
   return (
-    <div>Work</div>
+    <div>
+      Work
+      {work&&
+      <p>You work as {work.occupation}</p>
+      }
+    </div>
   )
 }
 
