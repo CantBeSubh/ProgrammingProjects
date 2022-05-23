@@ -12,12 +12,10 @@ function Appearance(props) {
   return (
     <div>
       <h1>Appearance</h1>
-      <ul>
-        {gender && gender!='-' && <li>Gender: {gender}</li>}
-        {race && <li>Race: {race}</li>}
-        {height && height[0]!=0 && <li>Height: {height}</li>}
-        {weight && weight[0]!=0 && <li>Weight: {weight}</li>}
-      </ul>
+        {gender && gender!='-' && <div>Gender: {gender}</div>}
+        {race && <div>Race: {race}</div>}
+        {height && height[0]!=0 && <div>Height: {height}</div>}
+        {weight && weight[0]!=0 && <div>Weight: {weight}</div>}
     </div>
   )
 }
