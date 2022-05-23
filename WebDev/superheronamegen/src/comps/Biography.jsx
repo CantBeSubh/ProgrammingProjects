@@ -4,7 +4,7 @@ function Biography(props) {
   let bio=props.biography
   return (
     <div>
-      <h1>Biography</h1>
+      {bio && <h1>Biography</h1>}
       {bio && 
       <div>
         <p>Your name is {bio.fullName==''?'unknown':bio.fullName}.</p>

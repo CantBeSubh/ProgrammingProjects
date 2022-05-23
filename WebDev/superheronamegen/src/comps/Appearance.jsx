@@ -11,7 +11,7 @@ function Appearance(props) {
   }
   return (
     <div>
-      <h1>Appearance</h1>
+      {appearance && <h1>Appearance</h1>}
         {gender && gender!='-' && <div>Gender: {gender}</div>}
         {race && <div>Race: {race}</div>}
         {height && height[0]!=0 && <div>Height: {height}</div>}

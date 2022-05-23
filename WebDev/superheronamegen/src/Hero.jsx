@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import Powerstat from './comps/Powerstat'
 import Appearance from './comps/Appearance'
 import Biography from './comps/Biography'
@@ -8,6 +8,7 @@ import Work from './comps/Work'
 
 function Hero() {
     let [data,setData]=useState([])
+
     const rand=()=>Math.floor(Math.random()*730)+1
 
     const fetchData=async ()=>{
@@ -21,10 +22,9 @@ function Hero() {
         }catch{
             fetchData()
         }
-
     }
 
-    let {name,powerstats,appearance,biography,work,connections,images} = data
+    let {name,powerstats,appearance,biography,work,images} = data
     
     return (
     <div>
@@ -33,7 +33,6 @@ function Hero() {
         <br/>
         <div onClick={fetchData} id='btn'>Click ME</div>
 
-        <h1>Details</h1>
         <Powerstat powerstats={powerstats}/>
         <Appearance appearance={appearance}/>
         <Biography biography={biography}/>

@@ -9,7 +9,8 @@ function Powerstat(props) {
         scales: {
             xAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max:100
                 },
                 gridLines: {
                     display: true
@@ -54,7 +55,7 @@ function Powerstat(props) {
 
   return (
     <div>
-        <h1>Powerstat</h1>
+        {powerstats && <h1>Powerstats</h1>}
         {powerstats &&
             <HorizontalBar
             data={{labels,datasets}}

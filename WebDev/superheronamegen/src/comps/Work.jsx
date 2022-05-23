@@ -4,7 +4,7 @@ function Work(props) {
   let work=props.work
   return (
     <div>
-      <h1>Work</h1>
+      {work && <h1>Work</h1>}
       {work&&
       <p> {work.occupation=='-'?'Unknown occupation':'You work as '+work.occupation}</p>
       }
