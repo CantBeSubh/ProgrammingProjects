@@ -1,9 +1,9 @@
 import React from 'react'
+
 import {useState,useEffect} from 'react'
 import Powerstat from './comps/Powerstat'
 import Appearance from './comps/Appearance'
 import Biography from './comps/Biography'
-import Connections from './comps/Connections'
 import Work from './comps/Work'
 
 function Hero() {
@@ -11,12 +11,17 @@ function Hero() {
     const rand=()=>Math.floor(Math.random()*730)+1
 
     const fetchData=async ()=>{
-        const id =rand()
-        const res=await fetch(
-            `https://akabab.github.io/superhero-api/api/id/${id}.json`
-        )
-        let data = await res.json()
-        setData(data)
+        try{
+            const id =rand()
+            const res=await fetch(
+                `https://akabab.github.io/superhero-api/api/id/${id}.json`
+            )
+            let data = await res.json()
+            setData(data)
+        }catch{
+            fetchData()
+        }
+
     }
 
     let {name,powerstats,appearance,biography,work,connections,images} = data
@@ -31,7 +36,6 @@ function Hero() {
         <Appearance appearance={appearance}/>
         <Biography biography={biography}/>
         <Work work={work}/>
-        <Connections connections={connections}/>
         <div onClick={fetchData} id='btn'>Click ME</div>
     </div>
 

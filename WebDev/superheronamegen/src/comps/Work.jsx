@@ -6,7 +6,7 @@ function Work(props) {
     <div>
       Work
       {work&&
-      <p>You work as {work.occupation}</p>
+      <p> {work.occupation=='-'?'Unknown occupation':'You work as '+work.occupation}</p>
       }
     </div>
   )
