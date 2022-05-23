@@ -30,6 +30,7 @@ function Hero() {
     <div>
         <div className="name">Hello {name}!</div>
         <img src={images && images.sm} className='image'/>
+        <br/>
         <div onClick={fetchData} id='btn'>Click ME</div>
 
         <h1>Details</h1>
