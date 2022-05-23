@@ -13,10 +13,10 @@ function Appearance(props) {
     <div>
       <h1>Appearance</h1>
       <ul>
-        {gender!='-' && <li>Gender: {gender}</li>}
+        {gender && gender!='-' && <li>Gender: {gender}</li>}
         {race && <li>Race: {race}</li>}
-        {height[0]!=0 && <li>Height: {height}</li>}
-        {weight[0]!=0 && <li>Weight: {weight}</li>}
+        {height && height[0]!=0 && <li>Height: {height}</li>}
+        {weight && weight[0]!=0 && <li>Weight: {weight}</li>}
       </ul>
     </div>
   )
