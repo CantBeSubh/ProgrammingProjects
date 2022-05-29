@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three JS Tree</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const scene=new THREE.Scene();
+        scene.background= new THREE.Color(0xFFA500);
+
+        const renderer=new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth,window.innerHeight);
+        
+        const camera = new THREE.PerspectiveCamera(100,window.innerWidth/window.innerHeight,0.1,2000);
+        
+        document.body.appendChild(renderer.domElement);
+
+        const animate= function(){
+            requestAnimationFrame(animate);
+            renderer.render(scene,camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
