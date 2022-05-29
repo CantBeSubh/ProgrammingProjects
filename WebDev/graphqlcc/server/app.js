@@ -6,7 +6,7 @@ const mongoose=require('mongoose')
 const connectToDB=()=>{
     console.time('[+] Connected to Database')
     mongoose
-        .connect('mongodb+srv://holycow:Dec042001BdKp@cluster0.wx51l.mongodb.net/?retryWrites=true&w=majority',
+        .connect('mongodb+srv://holycow:Dec042001BdKp@cluster0.wx51l.mongodb.net/gql?retryWrites=true&w=majority',
         ()=>{console.timeEnd('[+] Connected to Database')})
         .catch((err)=>{console.log('[!] '+err+'\n[-] Disconnecting...');process.exit(1)})
 }
