@@ -13,7 +13,7 @@ const connectToDB=()=>{
 
 
 const app=express()
-const port=3000
+const port=3001
 
 app
     .use('/graphql',graphqlHTTP({schema,graphiql:true}))
