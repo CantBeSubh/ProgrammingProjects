@@ -3,12 +3,16 @@ const {graphqlHTTP}=require('express-graphql')
 const schema=require('./scheme/schema')
 const mongoose=require('mongoose')
 const cors=require('cors')
+const dotenv=require('dotenv')
 
+dotenv.config('.env')
+
+const db=process.env.DB.replace('<pwd>',process.env.DB_PWD)
 
 const connectToDB=()=>{
     console.time('[+] Connected to Database')
     mongoose
-        .connect('mongodb+srv://holycow:Dec042001BdKp@cluster0.wx51l.mongodb.net/gql?retryWrites=true&w=majority',
+        .connect(db,
         ()=>{console.timeEnd('[+] Connected to Database')})
         .catch((err)=>{console.log('[!] '+err+'\n[-] Disconnecting...');process.exit(1)})
 }
@@ -16,7 +20,6 @@ const connectToDB=()=>{
 
 const app=express()
 const port=3001
-
 
 app
     .use(cors())

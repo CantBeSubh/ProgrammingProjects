@@ -1,5 +1,5 @@
 const graphql=require('graphql')
-const _=require('lodash')
+// const _=require('lodash')
 const Book=require('../model/book')
 const Author=require('../model/author')
 
@@ -12,24 +12,6 @@ const {
     GraphQLList,
     GraphQLNonNull
 }=graphql
-
-// var books = 
-// [
-//     { "name": "Name of the Wind", "genre": "Fantasy", "authorId": "62932aa2a272b91b38198b61" },
-//     { "name": "The Final Empire", "genre": "Fantasy", "authorId": "62932aa2a272b91b38198b62" },
-//     { "name": "The Long Earth", "genre": "Sci-Fi", "authorId": "62932aa2a272b91b38198b63" },
-//     { "name": "The Hero of Ages", "genre": "Fantasy", "authorId": "62932aa2a272b91b38198b62" },
-//     { "name": "The Colour of Magic", "genre": "Fantasy", "authorId": "62932aa2a272b91b38198b63" },
-//     { "name": "The Light Fantastic", "genre": "Fantasy", "authorId": "62932aa2a272b91b38198b63" }
-// ];
-
-// var authors = 
-// [
-//     { "name": 'Patrick Rothfuss', "age": 44 },
-//     { "name": 'Brandon Sanderson', "age": 42 },
-//     { "name": 'Terry Pratchett', "age": 66 }
-// ]
-
 
 const BookType=new GraphQLObjectType({
     name:'Book',
