@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 import { useQuery,useMutation } from "@apollo/client";
-import { getAuthorsQuery,addBookMutation} from "../queries";
+import { getBooksQuery,getAuthorsQuery,addBookMutation} from "../queries";
 import { useState } from "react";
 
 
 function AddBook() {
   const [state,setState]=useState({name:'',genre:'',authorId:''})
   const { loading, error, data } = useQuery(getAuthorsQuery)
-  const [addBook, { data_, loading_, error_ }] = useMutation(addBookMutation);
+  const [addBook, { data_, loading_, error_ }]=useMutation(addBookMutation,{refetchQueries:[getBooksQuery]})
   
   const handleSubmit=(e)=>{
     if (loading_) return 'Submitting...';
