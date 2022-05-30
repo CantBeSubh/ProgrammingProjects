@@ -7,13 +7,13 @@ import { useState } from "react";
 function AddBook() {
   const [state,setState]=useState({name:'',genre:'',authorId:''})
   const { loading, error, data } = useQuery(getAuthorsQuery)
-  const [adddBook, { data_, loading_, error_ }] = useMutation(addBookMutation);
+  const [addBook, { data_, loading_, error_ }] = useMutation(addBookMutation);
   
   const handleSubmit=(e)=>{
     if (loading_) return 'Submitting...';
     if (error_) return `Submission error! ${error_.message}`;
     e.preventDefault()
-    adddBook({variables:state})
+    addBook({variables:state})
     setState({name:'',genre:'',authorId:''})
   }
 
