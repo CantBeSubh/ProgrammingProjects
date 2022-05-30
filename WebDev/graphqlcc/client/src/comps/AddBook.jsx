@@ -14,7 +14,6 @@ function AddBook() {
     if (error_) return `Submission error! ${error_.message}`;
     e.preventDefault()
     adddBook({variables:state})
-    console.log(data_)
     setState({name:'',genre:'',authorId:''})
   }
 
