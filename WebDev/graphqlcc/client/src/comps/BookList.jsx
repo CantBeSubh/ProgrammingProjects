@@ -8,8 +8,8 @@ import BookDetails from './BookDetails'
 function Booklist() {
   const { loading, error, data } = useQuery(getBooksQuery)
   const [selected,setSelected]=useState('')
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error!</p>
+  if (loading) return 
+  if (error) return 
 
   const {books}=data
 
@@ -17,9 +17,8 @@ function Booklist() {
     return books.map(({id,name,author})=><li key={id} onClick={e=>setSelected(id)}>{name} by {author.name}</li>)
   }
   
-
   return (
-    <div className="Booklist">
+    <div id="book-list">
       <ul>
       {displayBooks()}
       </ul>

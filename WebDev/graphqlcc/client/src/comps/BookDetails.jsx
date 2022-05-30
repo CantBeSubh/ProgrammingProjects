@@ -5,13 +5,12 @@ import {useQuery} from '@apollo/client'
 function BookDetails({bookId}) {
 
     const { loading, error, data } = useQuery(getBookQuery,{variables:{id:bookId}})
-    if (loading) return <p>Loading...</p>
-    if (error) return <p>Error!</p>
-
-    const {book}=data
+    const book=data?data.book:''
 
     return (
         <div id="book-details">
+            {loading && <p>Loading...</p>}
+            {error && bookId && <p>Error!</p>}
             {book &&
                 <div>
                 <h2>{ book.name }</h2>
