@@ -3,7 +3,6 @@ import {useQuery} from '@apollo/client'
 
 
 function BookDetails({bookId}) {
-
     const { loading, error, data } = useQuery(getBookQuery,{variables:{id:bookId}})
     const book=data?data.book:''
 

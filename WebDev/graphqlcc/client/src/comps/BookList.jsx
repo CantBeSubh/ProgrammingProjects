@@ -14,16 +14,22 @@ function Booklist() {
   const {books}=data
 
   const displayBooks=()=>{
-    return books.map(({id,name,author})=><li key={id} onClick={e=>setSelected(id)}>{name} by {author.name}</li>)
+    return books.map(({id,name,author})=>
+    <li 
+    key={id} 
+    onClick={e=>setSelected(id)}>
+      {name} by {author.name}
+    </li>
+    )
   }
   
   return (
     <>
-    <div id="book-list">
-      <ul>
-      {displayBooks()}
-      </ul>
-    </div>
+      <div id="book-list">
+        <ul>
+        {displayBooks()}
+        </ul>
+      </div>
       <BookDetails bookId={selected}/>
     </>
   );

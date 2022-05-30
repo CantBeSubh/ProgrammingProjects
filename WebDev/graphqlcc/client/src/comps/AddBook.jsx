@@ -1,17 +1,15 @@
-/* eslint-disable no-unused-vars */
 import { useQuery,useMutation } from "@apollo/client";
 import { getBooksQuery,getAuthorsQuery,addBookMutation} from "../queries";
 import { useState } from "react";
 
-
 function AddBook() {
   const [state,setState]=useState({name:'',genre:'',authorId:''})
   const { loading, error, data } = useQuery(getAuthorsQuery)
-  const [addBook, { data_, loading_, error_ }]=useMutation(addBookMutation,{refetchQueries:[getBooksQuery]})
+  const [addBook, status]=useMutation(addBookMutation,{refetchQueries:[getBooksQuery]})
   
   const handleSubmit=(e)=>{
-    if (loading_) return 'Submitting...';
-    if (error_) return `Submission error! ${error_.message}`;
+    if (status.loading) return 'Submitting...';
+    if (status.error) return `Submission error! ${status.error.message}`;
     e.preventDefault()
     addBook({variables:state})
     setState({name:'',genre:'',authorId:''})
@@ -43,14 +41,16 @@ function AddBook() {
       </div>
       <div className="field">
         <label>Author:</label>
-        <select onChange={(e)=>setState((old)=>({...old,authorId:e.target.value}))}>
+        <select 
+        onChange={(e)=>setState((old)=>({...old,authorId:e.target.value}))}
+        >
           <option>Select Author</option>
           {displayAuthors()}
         </select>
       </div>
-      <button>+</button>
+      <button> + </button>
     </form>
-  );
+  )
 }
 
 export default AddBook;
