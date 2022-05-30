@@ -9,10 +9,6 @@ function AddBook() {
   const { loading, error, data } = useQuery(getAuthorsQuery)
   const [adddBook, { data_, loading_, error_ }] = useMutation(addBookMutation);
   
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error {error.message}</p>  
-  
-  
   const handleSubmit=(e)=>{
     if (loading_) return 'Submitting...';
     if (error_) return `Submission error! ${error_.message}`;
@@ -23,6 +19,8 @@ function AddBook() {
   }
 
   const displayAuthors=()=>{
+    if (loading) return `Loading...`
+    if (error) return `Error ${error.message}`
     return data.authors.map(author => <option key={ author.id } value={author.id}>{ author.name }</option>)
   }
   
