@@ -1,33 +1,53 @@
-import { useQuery } from "@apollo/client";
-import { getAuthorsQuery } from "../queries";
+/* eslint-disable no-unused-vars */
+import { useQuery,useMutation } from "@apollo/client";
+import { getAuthorsQuery,addBookMutation} from "../queries";
+import { useState } from "react";
 
 
 function AddBook() {
+  const [state,setState]=useState({name:'',genre:'',authorId:''})
   const { loading, error, data } = useQuery(getAuthorsQuery)
+  const [adddBook, { data_, loading_, error_ }] = useMutation(addBookMutation);
+  
   if (loading) return <p>Loading...</p>
-  if (error) return <p>Error!</p>
-
-  const {authors}=data
-  console.log(authors)
+  if (error) return <p>Error {error.message}</p>  
+  
+  
+  const handleSubmit=(e)=>{
+    if (loading_) return 'Submitting...';
+    if (error_) return `Submission error! ${error_.message}`;
+    e.preventDefault()
+    adddBook({variables:state})
+    console.log(data_)
+    setState({name:'',genre:'',authorId:''})
+  }
 
   const displayAuthors=()=>{
-    return authors.map(author=><option key={ author.id } value={author.id}>{ author.name }</option>)
+    return data.authors.map(author => <option key={ author.id } value={author.id}>{ author.name }</option>)
   }
   
   return (
-    <form id="add-book">
+    <form id="add-book" onSubmit={handleSubmit}>
       <div className="field">
         <label>Book name:</label>
-        <input type="text" />
+        <input 
+        type="text" 
+        onChange={(e)=>setState((old)=>({...old,name:e.target.value}))}
+        value={state.name}
+        />
       </div>
       <div className="field">
         <label>Genre:</label>
-        <input type="text" />
+        <input 
+        type="text" 
+        onChange={(e)=>setState((old)=>({...old,genre:e.target.value}))}
+        value={state.genre}
+        />
       </div>
       <div className="field">
         <label>Author:</label>
-        <select>
-          <option>Select author</option>
+        <select onChange={(e)=>setState((old)=>({...old,authorId:e.target.value}))}>
+          <option>Select Author</option>
           {displayAuthors()}
         </select>
       </div>
