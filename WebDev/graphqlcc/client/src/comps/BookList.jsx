@@ -18,12 +18,14 @@ function Booklist() {
   }
   
   return (
+    <>
     <div id="book-list">
       <ul>
       {displayBooks()}
       </ul>
-      <BookDetails bookId={selected}/>
     </div>
+      <BookDetails bookId={selected}/>
+    </>
   );
 }
   

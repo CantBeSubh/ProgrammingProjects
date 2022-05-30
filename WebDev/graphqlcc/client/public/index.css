@@ -1,10 +1,10 @@
 body{
-  background: #eee;
   font-family: 'Nunito SemiBold';
+  background-color: #444;
+  color:white;
 }
 
 #main h1{
-  color: #444;
   text-align: center;
 }
 
@@ -13,6 +13,21 @@ body{
   box-sizing: border-box;
   width: 60%;
   height: 100%;
+}
+
+#book-details{
+  size: 36rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: #ccc;
+  padding: 30px;
+  overflow: auto;
+  box-shadow: -2px -3px 5px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  color: #444;
 }
 
 #book-list{
@@ -24,19 +39,32 @@ body{
   margin: 12px;
   padding: 10px;
   border-radius: 4px;
-  border: 1px solid #880E4F;
+  border: 1px solid #aaa;
   box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
   cursor: pointer;
-  color: #880E4F;
+  /* color: #aaa; */
+  transition: all .5s;
+}
+
+#book-list li:hover{
+  color:white;
+  background-color:#aaa ;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+  transform: translateY(-5%);
+}
+#book-list li:active{
+  transform: translateY(-.5%);
 }
 
 form{
+  margin: 2%;
   background: #fff;
   padding: 20px;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 400px;
+  border-radius: 2%;
 }
 
 form .field{
@@ -59,7 +87,7 @@ form input, form select{
 form button{
   color: #fff;
   font-size: 2em;
-  background: #AD1457;
+  background: green;
   border: 0;
   padding: 0 10px;
   border-radius: 50%;
@@ -67,30 +95,4 @@ form button{
   position: absolute;
   bottom: 10px;
   left: 10px;
-}
-
-#book-details{
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 40%;
-  height: 100%;
-  background: #AD1457;
-  padding: 30px;
-  overflow: auto;
-  box-shadow: -2px -3px 5px rgba(0,0,0,0.3);
-  box-sizing: border-box;
-  color: #fff;
-}
-
-#book-details li{
-  display: inline-block;
-  background-color: white;
-  margin: 12px;
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #880E4F;
-  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
-  cursor: pointer;
-  color: #AD1457;
 }
