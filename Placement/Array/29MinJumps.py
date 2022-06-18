@@ -1,4 +1,3 @@
-
 def minJumps(arr):
     if len(arr) <= 1 : 
         return 0 
@@ -20,6 +19,6 @@ def minJumps(arr):
 
     return -1 
 
-Arr=[1,2,3,4,5]
+Arr=[1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9]
 ans = minJumps(Arr)
 print(ans)
