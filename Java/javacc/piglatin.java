@@ -25,7 +25,7 @@ public class piglatin {
                     break;
                 }
             }
-            StringBuilder sb = new StringBuilder(word);
+            // StringBuilder sb = new StringBuilder(word);
             final_str = word.substring(pos);
             final_str = final_str + word.substring(0, pos) + "ay";
         } else {
