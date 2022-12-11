@@ -1,8 +1,14 @@
 import Head from 'next/head'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [audio, setAudio] = useState(null);
+  useEffect(() => {
+    setAudio([new Audio('/audio/type.ogg'), new Audio('/audio/enter.ogg')]);
+  }, []);
+
+
   const creatDigits = () => {
     const digits = [];
     for (let i = 1; i < 10; i++)
@@ -20,11 +26,11 @@ export default function Home() {
   const ops = ["+", "-", "*", "/", "."];
 
   const updateCalc = value => {
+    audio[0].play();
     if (
       ops.includes(value) && calc === "" ||
       ops.includes(value) && ops.includes(calc.slice(-1))
     ) return;
-
     setCalc(calc + value);
 
     if (!ops.includes(value)) {
@@ -33,11 +39,13 @@ export default function Home() {
   }
 
   const calculate = () => {
+    audio[1].play();
     if (calc === "") return;
     setCalc(eval(calc).toString());
   }
 
   const deleteLast = () => {
+    audio[1].play();
     if (calc === "") return;
     setCalc(calc.slice(0, -1));
   }
