@@ -78,7 +78,7 @@ button:hover {
   }
 
   50% {
-    box-shadow: 0px 0px 200px currentColor;
+    box-shadow: 0px 0px 50px currentColor;
   }
 
   100% {
