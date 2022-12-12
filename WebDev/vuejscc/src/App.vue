@@ -1,6 +1,9 @@
 <template>
     <div class="container">
-        <Header title="Task Tracker" />
+        <Header @toggle-add-task="toggleAddTask" title="Task Tracker" />
+        <div v-if="showAddTask">
+            <AddTask @add-task="addTask" />
+        </div>
         <Tasks
             @toggle-reminder="toggleReminder"
             @delete-task="deleteTask"
@@ -13,19 +16,25 @@
 <script>
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
+import AddTask from "./components/AddTask";
 
 export default {
     name: "App",
     components: {
         Header,
         Tasks,
+        AddTask,
     },
     data() {
         return {
             tasks: [],
+            showAddTask: false,
         };
     },
     methods: {
+        toggleAddTask() {
+            this.showAddTask = !this.showAddTask;
+        },
         deleteTask(id) {
             if (confirm("Are you sure?")) {
                 this.tasks = this.tasks.filter((task) => task.id !== id);
@@ -35,6 +44,11 @@ export default {
             this.tasks = this.tasks.map((task) =>
                 task.id === id ? { ...task, reminder: !task.reminder } : task
             );
+        },
+        addTask(task) {
+            const id = Math.floor(Math.random() * 100000) + 1;
+            const newTask = { id, ...task };
+            this.tasks.push(newTask);
         },
     },
     created() {
@@ -70,12 +84,18 @@ export default {
     margin: 0;
     padding: 0;
     /* //css to disable selecting text */
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
