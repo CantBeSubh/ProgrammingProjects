@@ -2,33 +2,60 @@ body {
     font-family: monospace;
     font-size: 20px;
     text-align: center;
-    background: black;
-    color: lime;
+    background: #222;
+    color: #ccc;
     margin: 3em;
 }
 
 strong {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    color: white;
+}
+
+h1 {
+    color: white;
 }
 
 button {
-    background: lime;
-    color: black;
+    background: none;
+    border-radius: 10px;
+    color: white;
     border: none;
     padding: 10px 15px;
+    margin: 10px;
     font-size: 1.2em;
     font-family: monospace;
     font-weight: bold;
+    box-shadow: 0px 0px 5px lime;
+    transition: .2s;
 }
 
-button:active {
-    background: green;
+button:hover {
+    box-shadow: 0px 0px 25px lime;
+
 }
 
 .scoreboard {
     width: 14em;
+    background-color: transparent;
     margin: auto;
+    margin-bottom: 50px;
     border: 1px solid lime;
+    animation: yt-effect 6s ease-in-out infinite;
+}
+
+@keyframes yt-effect {
+    0% {
+        box-shadow: 0px 0px 25px lime;
+    }
+
+    50% {
+        box-shadow: 0px 0px 100px lime;
+    }
+
+    100% {
+        box-shadow: 0px 0px 25px lime;
+    }
 }
 
 .scoreboard h2 {

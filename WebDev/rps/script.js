@@ -15,6 +15,12 @@ function playScissors() {
     play("scissors");
 }
 
+function getComputerPlay() {
+    var plays = ['rock', 'paper', 'scissors'];
+    var play = plays[Math.floor(Math.random() * plays.length)];
+    return play;
+}
+
 function play(humanPlay) {
 
     computerPlay = getComputerPlay();
@@ -23,33 +29,33 @@ function play(humanPlay) {
 
     if (humanPlay == 'rock') {
         if (computerPlay == 'rock') {
-            document.getElementById('status').innerHTML += "<p>You tied. :|</p>";
+            document.getElementById('status').innerHTML += "<p>You tied. 😑</p>";
         } else if (computerPlay == 'paper') {
-            document.getElementById('status').innerHTML += "<p>You lose. :(</p>";
+            document.getElementById('status').innerHTML += "<p>You lose. 😔</p>";
             computerScore++;
         } else if (computerPlay == 'scissors') {
-            document.getElementById('status').innerHTML += "<p>You win! :)</p>";
+            document.getElementById('status').innerHTML += "<p>You win! 🙂</p>";
             humanScore++;
         }
     } else if (humanPlay == 'paper') {
         if (computerPlay == 'rock') {
-            document.getElementById('status').innerHTML += "<p>You win! :)</p>";
+            document.getElementById('status').innerHTML += "<p>You win! 🙂</p>";
             humanScore++;
         } else if (computerPlay == 'paper') {
-            document.getElementById('status').innerHTML += "<p>You tied. :|</p>";
+            document.getElementById('status').innerHTML += "<p>You tied. 😑</p>";
         } else if (computerPlay == 'scissors') {
-            document.getElementById('status').innerHTML += "<p>You lose. :(</p>";
+            document.getElementById('status').innerHTML += "<p>You lose. 😔</p>";
             computerScore++;
         }
     } else if (humanPlay == 'scissors') {
         if (computerPlay == 'rock') {
-            document.getElementById('status').innerHTML += "<p>You lose. :(</p>";
+            document.getElementById('status').innerHTML += "<p>You lose. 😔</p>";
             computerScore++;
         } else if (computerPlay == 'paper') {
-            document.getElementById('status').innerHTML += "<p>You win! :)</p>";
+            document.getElementById('status').innerHTML += "<p>You win! 🙂</p>";
             humanScore++;
         } else if (computerPlay == 'scissors') {
-            document.getElementById('status').innerHTML += "<p>You tied. :|</p>";
+            document.getElementById('status').innerHTML += "<p>You tied. 😑</p>";
         }
     }
 
@@ -58,8 +64,3 @@ function play(humanPlay) {
 
 }
 
-function getComputerPlay() {
-    var plays = ['rock', 'paper', 'scissors'];
-    var play = plays[Math.floor(Math.random() * plays.length)];
-    return play;
-}
