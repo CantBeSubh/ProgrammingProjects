@@ -3,31 +3,24 @@
 using namespace std;
 int findFloor(vector<long long> v, long long n, long long x)
 {
-    int max;
-    int ind = -1;
-    for (int i = 0; i < n; i++)
+    int low = 0, high = n - 1;
+    while (low <= high)
     {
-        if (v[i] <= x)
-        {
-            if (ind == -1)
-            {
-                max = v[i];
-                ind = i;
-            }
-            else if (v[i] > max)
-            {
-                max = v[i];
-                ind = i;
-            }
-        }
+        int mid = (low + high) / 2;
+        if (v[mid] == x)
+            return mid;
+        else if (v[mid] > x)
+            high = mid - 1;
+        else
+            low = mid + 1;
     }
-    return ind;
+    return high;
 }
 
 int main()
 {
     cout << "Hello World!" << endl;
-    vector<long long> v = {1, 2, 8, 10, 10, 12, 19};
+    vector<long long> v = {1, 2, 8, 10, 11, 12, 19};
     int n = v.size();
     int x = 5;
     cout << findFloor(v, n, x) << endl;
