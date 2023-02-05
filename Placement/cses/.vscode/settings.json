@@ -42,6 +42,13 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xutility": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "algorithm": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "format": "cpp",
+        "list": "cpp",
+        "valarray": "cpp",
+        "map": "cpp"
     }
 }
