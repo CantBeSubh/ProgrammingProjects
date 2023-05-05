@@ -1,0 +1,1 @@
+abs(a - m) + abs(b - m) + abs(c - m)
